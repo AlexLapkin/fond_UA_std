@@ -36,8 +36,8 @@ height: auto;}
 {
 --main-text-color: #434455;
 --main-background-color:#FFFFFF;
---logo-check-color:#4D5AE5;
---header-word-color:#2E2F42;
+--logo-check-color:yellow;
+--header-word-color:blue;
 --nav-link-color:#2E2F42;
 --link-active-color:#404BBF;
 --hero-background-color:#2E2F42;
@@ -312,7 +312,7 @@ height: 40px;}
 
 /*--Задаем отступ между логотипом и nav-ul--*/
 .head 
-{ margin-right: 120px; }
+{ margin-right: 60px; }
 
 
 /*--Включаем меню навигации - делаем видимым--*/
@@ -330,7 +330,7 @@ align-items: center; }
 .nav-ul 
 {display: flex;
 align-items: center;
-gap: 40px;
+gap: 20px;
 }     
     
 
@@ -375,7 +375,7 @@ color: var(--link-active-color);}
 
 
 /*--Делаем подчеркивание текущей страницы при помощи псевдоэлемента after--*/
-.current-page-main::after
+/* .current-page-main::after
 {content: '';
  width: 48px;
  height: 4px;
@@ -385,7 +385,7 @@ color: var(--link-active-color);}
  background-color: #404BBF;
  margin: auto;
  position: absolute;
- }
+ } */
 
 
 /*--Данные ссылок контактов--*/
@@ -431,13 +431,14 @@ color: var(--link-active-color);
 
 /*--Задаем отступ между логотипом и nav-ul--*/
 .head
-{margin-right: 76px;} /*--Задаем отступ между логотипом и nav-ul--*/
+{margin-right: 230px;} /*--Задаем отступ между логотипом и nav-ul--*/
 
 
 /*--Делаем список навигации flex-контейнером--*/
 .nav-ul {
     display: flex;
     align-items: center;
+    gap: 60px;
     }
 
 
@@ -477,18 +478,29 @@ padding: 24px 0;
 
 /*--Задаем параметры секции hero--*/
 .hero {
-background-color: var(--hero-background-color);
+/* background-color: var(--hero-background-color); */
 margin-top: 0;
 max-width: 428px;
-padding: 112px 0;
+padding: 70px 0;
 margin-left: auto;
 margin-right: auto;
-background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
-url(../images/hero/Hero_mobile_1x.jpg);
-background-size: cover;
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+url(../images/hero/Hero_mobile_1x.jpg); */
+/* background-size: cover;
 background-repeat: no-repeat;
-background-position: center;}
+background-position: center; */
+border-bottom: 2px solid yellow;
+position: relative;
+}
 
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+}
 
 /*--Описываем медиаправило для фонового изображения HERO-mobile--*/
 @media screen and (min-device-pixel-ratio:2) and (max-width:767px),
@@ -496,9 +508,12 @@ screen and (min-resolution: 192dpi) and (max-width: 767px),
 screen and (min-resolution: 2ppx) and (max-width: 767px)
 {
 .hero
- {background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../images/hero/Hero_mobile_2x.jpg) }
+ {
+  /* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/hero/Hero_mobile_2x.jpg) */
+   }
 }
+
 
 
 /*--Задаем параметры заголовка секции hero--*/
@@ -557,17 +572,17 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
 /*--Задаем параметры секции hero--*/
 .hero {
-background-color: var(--hero-background-color);
+/* background-color: var(--hero-background-color); */
 margin-top: 0;
 max-width: 768px;
-padding: 112px 0;
+padding: 70px 0;
 margin-left: auto;
 margin-right: auto;
-background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url(../images/hero/Hero_tablet_1x.jpg);
-background-size: cover;
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_tablet_1x.jpg); */
+/* background-size: cover;
 background-repeat: no-repeat;
-background-position: center;
+background-position: center; */
 }
 
 
@@ -576,10 +591,16 @@ background-position: center;
 screen and (min-resolution: 192dpi) and (min-width: 768px),
 screen and (min-resolution: 2ppx) and (min-width: 768px) {
 .hero {
-background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url(../images/hero/Hero_tablet_2x.jpg)
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_tablet_2x.jpg) */
 }
 }
+
+.hero-content {
+  display: flex;
+  
+}
+
 
 /*--Задаем параметры заголовка секции hero--*/
 .hero-title {
@@ -609,17 +630,17 @@ margin-right: auto;
  
 /*--Задаем параметры секции hero--*/
 .hero {
-background-color: var(--hero-background-color);
+/* background-color: var(--hero-background-color); */
 margin-top: 0;
 max-width: 1440px;
-padding: 188px 0;
+padding: 100px 0;
 margin-left: auto;
 margin-right: auto;
-background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url(../images/hero/Hero_desktop_1x.jpg);
-background-size: cover;
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_desktop_1x.jpg); */
+/* background-size: cover;
 background-repeat: no-repeat;
-background-position: center;
+background-position: center; */
 }
 
 
@@ -628,8 +649,8 @@ background-position: center;
 screen and (min-resolution: 192dpi) and (min-width: 1158px),
 screen and (min-resolution: 2ppx) and (min-width: 1158px) {
 .hero {
-background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-              url(../images/hero/Hero_desktop_2x.jpg);
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+              url(../images/hero/Hero_desktop_2x.jpg); */
       }
 }
 
@@ -641,193 +662,6 @@ background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
 }
 
 
-/*-------------------СЕКЦИЯ--OUR ADVANTAGES------------------------*/
-
-/*----------------------МОБИЛЬНАЯ ВЕРСИЯ-----------------------*/
-
-
-/*--Задаем внутренние отступы секции--*/
-.section-adv
-{ padding: 96px 0; }
-
-
-/*--Данные заголовка секции--*/
-.section-title {
-color: var(--section-main-text-color);
-font-weight: 700;
-font-size: 36px;
-line-height: 1.1;
-text-align: center;
-letter-spacing: 0.02em;
-text-transform: capitalize;
-margin-bottom: 72px;
-}
-
-/*--Описываем скрытый заголовок--*/
-.visually-hidden
-{
-position: absolute;
-width: 1px;
-height: 1px;
-margin: -1px;
-border: 0;
-padding: 0;
-white-space: no-wrap;
-clip-path: inset(100%);
-clip: rect(0 0 0 0);
-overflow: hidden; 
-}
-
-/*--Делаем список flex-элементом, чтобы список расположить горизонтально--*/
-.section-ul
-{display: flex;
- flex-direction: column;
- align-items: center;   
-gap: 72px;}
-
-
-/*--Определяем ширину пункта списка--*/
-.section-item 
-{ flex-basis: calc((100% - 3*24px)/4);  }
-
-
-/*--Данные подзаголовков--*/
-.section-subtitle 
-{color: var(--section-main-text-color);
- font-weight: 700;
- font-size: 36px;
- line-height: 1.11;
- letter-spacing: 0.02em;
- text-align: center;
- margin-bottom: 8px;
-}
-
-/*--Данные текста секции--*/
-.section-text {
-color: var(--main-text-color);
-font-weight: 500;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.02em;
-}
-
-/*--Скрываем ненужные иконки в мобильной версии--*/
-.icon-adv 
-{ display: none; }
-
-
-/*-----------------ПЛАНШЕТНАЯ ВЕРСИЯ----------------------*/
-
-/*--Медиаправило планшетной версии--*/
-@media screen and (min-width: 768px) {
-
-    
-/*--Делаем список flex-элементом, чтобы список 
-    расположить в несколько рядов--*/
-.section-ul
-{
-flex-direction: row;
- flex-wrap: wrap;
- column-gap: 24px;
- row-gap: 72px;
- }
-
-
-/*--Определяем ширину пункта списка--*/
-.section-item 
-{ flex-basis: calc((100% - 1*24px)/2);  }
-
-
-/*--Прижимаем подзаголовки к левому краю--*/
-.section-subtitle
-{ text-align: start; }
-
-}
-
-
-/*----------------ДЕСКТОПНАЯ ВЕРСИЯ---------------*/
-
-@media screen and (min-width: 1158px) {
-
-    
-/*--Задаем внутренние отступы секции Adv--*/
-.section-adv 
-{padding: 120px 0;}
-
-
-/*--Делаем список flex-элементом, чтобы список расположить горизонтально--*/
-.section-ul
-{display: flex;
-gap: 24px;}
-
-
-/*--Определяем ширину пункта списка--*/
-.section-item {
-  flex-basis: calc((100% - 3*24px)/4);  }
-
-
-/*--Описываем иконки секции Advantages--*/
-.icon-adv
-{display: flex;
-align-items: center;
-justify-content: center;    
-width: 264px;
-height: 112px;
-background-color: #F4F4FD;
-margin-bottom: 8px;
-border-radius: 4px;
-}
-
-
-/*--Данные подзаголовков--*/
-.section-subtitle {
-    /*--color: var(--section-main-text-color);--*/
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    }
-
-  
-/*--Данные текста секции--*/
-.section-text {
-font-weight: 400;
-font-size: 16px;
-line-height: 1.5;
-letter-spacing: 0.02em;
-}
-
-}
-
-/*---------------СЕКЦИЯ WORK EXAMPLES---------------*/
-
-/*------------------МОБИЛЬНАЯ ВЕРСИЯ-------------------*/
-
-/*--Скрываем секцию для мобильной версии--*/    
-.section-exmp
-{ display: none; }
-
-
-/*---------ПЛАНШЕТНАЯ ВЕРСИЯ-----------*/
-
-/*--Оставляем секцию section-exmp скрытой--*/
-
-
-/*---------ДЕСКТОПНАЯ ВЕРСИЯ-----------*/
-
-@media screen and (min-width: 1158px) {
-
-/*--Задаем внутренний отступ секции Work Exmaples--*/
-.section-exmp 
-{ display: block;
-  padding-bottom: 120px;}
-
-/*--Определяем ширину списка img--*/
-.section-item-img 
-{ flex-basis: calc((100% - 3*16px)/3);   }
-
-}
-
 /*------------------СЕКЦИЯ OUR TEAM----------------*/
 
 /*------------МОБИЛЬНАЯ ВЕРСИЯ-------------*/
@@ -836,10 +670,24 @@ letter-spacing: 0.02em;
 /*--Данные секции Our Team, у которой отличается фон--*/
 .section-team
 {
-background-color: var(--section-team-background-color);
-padding: 96px 0;
+/* background-color: var(--section-team-background-color); */
+padding: 70px 0;
+position: relative;
+border-bottom: 2px solid yellow;
 }
 
+.section-team::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  }
+
+.section-title {
+text-align: center;  
+}
 
 /*--Задаем внутренние отступы и располагаем вертикально--*/
 .section-ul-team
@@ -855,6 +703,8 @@ padding: 96px 0;
 background-color: var(--main-background-color);
 text-align: center;
 flex-basis: calc((100%)/1);
+width: 264px;
+height: 500px;
 border-radius: 0px 0px 4px 4px;
 box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
   0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -863,7 +713,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 
 /*--Создание контейнера - имя, должность членов команды--*/
 .name-job
-{ padding: 32px 0; } /*--внутренние отступы контейнера--*/
+{ padding: 32px 10px; } /*--внутренние отступы контейнера--*/
 
 
 /*--Данные подзаголовков членов команды--*/
@@ -960,7 +810,7 @@ flex-basis: calc((100% - 1*24px)/2);}
    
 /*--Данные секции Our Team, у которой отличается фон--*/
 .section-team
-{ padding: 120px 0;} /*--Задаем внутренние паддинги--*/
+{ padding: 100px 0;} /*--Задаем внутренние паддинги--*/
 
 
 /*--Задаем паддинги--*/
@@ -981,8 +831,19 @@ flex-basis: calc((100% - 1*24px)/2);}
 
 /*--Задаем внутренние паддинги секции заказчиков--*/
 .section-customers
-{padding: 96px 0;}
+{padding: 70px 0;
+  border-bottom: 2px solid yellow;
+  position: relative;
+}
 
+.section-customers::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  }
 
 /*--Описание контейнера логотипов заказчиков--*/
 .logo-company
@@ -1042,6 +903,13 @@ color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 fill: #8E8F99;
 }
 
+.section-partners-subtitle {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 
 /*----------------ПЛАНШЕТНАЯ ВЕРСИЯ------------------*/
 
@@ -1082,7 +950,7 @@ fill: #8E8F99;
 
 /*--Задаем внутренние паддинги секции закачиков--*/
 .section-customers
-{padding: 120px 0;}
+{padding: 100px 0;}
 
 
 /*--Задаем паддинги--*/
@@ -1164,10 +1032,10 @@ text-transform: uppercase;
 .footer-text {
 color: var(--footer-main-text-color);
 font-weight: 400;
-font-size: 16px;
+font-size: 14px;
 line-height: 1.5;
 letter-spacing: 0.02em;
-width: 264px;
+width: 350px;
 }
 
 /*--Задание отступов контейнеру соцсетей футера--*/
@@ -1366,6 +1234,15 @@ padding: 96px 0;
 {text-align: start;
 }
 
+/*--Описываем текст футера--*/
+.footer-text {
+  color: var(--footer-main-text-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  width: 400px;
+  }
 
 /*--Описание текста над формой--*/
 .text-form
@@ -1404,14 +1281,15 @@ padding: 100px 0;
 .foot-content
 {display: flex;
  flex-direction: row;
- width: 1158px; 
+ width: 1158px;
+ padding-left: 100px; 
 align-items: baseline;
 }
 
 
 /*--Контейнер логотип + текст--*/
 .logo-text-footer
-{margin-right: 120px;}
+{margin-right: 150px;}
 
  
 /*--Контейнер с формой--*/
